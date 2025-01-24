@@ -385,7 +385,6 @@ def comment(authorization,mediaId,message ,accountUid , deviceUid ):
         "x-fb-client-ip": "True",
         "x-fb-server-cluster": "True"
     }
-    data = 'signed_body=SIGNATURE.%7B%22include_media_code%22%3A%22false%22%2C%22user_breadcrumb%22%3A%22czufB4Hr5%2FzyrjjqNUJo1UGcnwNIFJRNVs4URQgemCc%3D%5CnNCAxNjQzIDAgMTczMDY2ODU5NTI5MA%3D%3D%5Cn%22%2C%22inventory_source%22%3A%22media_or_ad%22%2C%22starting_clips_media_id%22%3A%22null%22%2C%22comment_creation_key%22%3A%22124889345%22%2C%22delivery_class%22%3A%22organic%22%2C%22idempotence_token%22%3A%22f9106b3f-c463-43e9-b72b-431d2875aa6b%22%2C%22include_e2ee_mentioned_user_list%22%3A%22false%22%2C%22radio_type%22%3A%22mobile-lte%22%2C%22_uid%22%3A%2254586931999%22%2C%22_uuid%22%3A%22fd1522f9-2663-4efd-89c8-435d6e988ddb%22%2C%22nav_chain%22%3A%22MainFeedFragment%3Afeed_timeline%3A1%3Acold_start%3A1730665903.848%3A%3A%2CInteractivityBottomSheetFragment%3Afeed_timeline%3A105%3Abutton%3A1730668592.266%3A%3A%2CCommentThreadFragment%3Acomments_v2%3A106%3Abutton%3A1730668592.483%3A%3A%22%2C%22logging_info_token%22%3A%22GCA5ODBkYjQxNmU0MjE0MzEwOTgxMjcyMTNhNjg5YjUxYUauoL%2FyDCauoL%2FyDAA%3D%22%2C%22comment_text%22%3A%22Tedt%22%2C%22is_from_direct_channel%22%3A%22false%22%2C%22is_carousel_bumped_post%22%3A%22false%22%2C%22container_module%22%3A%22comments_v2_feed_timeline%22%2C%22feed_position%22%3A%220%22%7D'
     data = urllib.parse.parse_qs(data)
     SIGNATURE = json.loads(data["signed_body"][0].split("SIGNATURE.")[1])
     comment_creation_key = int(time.time()/10)
